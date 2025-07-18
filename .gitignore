@@ -1,0 +1,7 @@
+echo "__pycache__/
+*.pyc
+*.pkl
+.venv/
+.env
+*.sqlite3
+*.db" > .gitignore

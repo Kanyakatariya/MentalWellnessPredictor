@@ -1,0 +1,72 @@
+<!-- templates/signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup - Mental Wellness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: {{ colors.primary }};
+            color: {{ colors.highlight }};
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: {{ colors.secondary }};
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            width: 350px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: {{ colors.accent }};
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: {{ colors.highlight }};
+            color: #000;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .redirect {
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        a {
+            color: {{ colors.highlight }};
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Signup">
+        </form>
+        <div class="redirect">
+            Already have an account? <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </div>
+</body>
+</html>
